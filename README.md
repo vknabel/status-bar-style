@@ -33,4 +33,4 @@ Valentin Knabel, [@vknabel](https://twitter.com/vknabel), dev@vknabel.com
 
 ## License
 
-Rock is available under the [MIT](LICENSE) license.
+@ionic-decorator/status-bar-style is available under the [MIT](LICENSE) license.
