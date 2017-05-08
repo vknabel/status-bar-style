@@ -2,10 +2,10 @@ Arguments:
   /Users/vknabel/.nvm/versions/node/v6.10.2/bin/node /Users/vknabel/.nvm/versions/node/v6.10.2/bin/yarn publish
 
 PATH: 
-  /Users/vknabel/.rvm/gems/ruby-2.3.4/bin:/Users/vknabel/.rvm/gems/ruby-2.3.4@global/bin:/Users/vknabel/.rvm/rubies/ruby-2.3.4/bin:/usr/local/bin:/Users/vknabel/.nvm/versions/node/v6.10.2/bin:/Users/vknabel/.fastlane/bin:/Users/vknabel/.swiftenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:./.rock/bin:/Users/vknabel/.rock/bin:/Users/vknabel/.rock/rocksets/global/bin:/Users/vknabel/.rvm/bin:/Users/vknabel/Library/Android/sdk//tools:/Users/vknabel/Library/Android/sdk//platform-tools
+  /Users/vknabel/.rvm/gems/ruby-2.3.4/bin:/Users/vknabel/.rvm/gems/ruby-2.3.4@global/bin:/Users/vknabel/.rvm/rubies/ruby-2.3.4/bin:/usr/local/bin:/Users/vknabel/.nvm/versions/node/v6.10.2/bin:/Users/vknabel/.fastlane/bin:/Users/vknabel/.swiftenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:./.rock/bin:/Users/vknabel/.rock/bin:/Users/vknabel/.rock/rocksets/global/bin:/Users/vknabel/Library/Android/sdk/tools:/Users/vknabel/Library/Android/sdk/platform-tools:/Users/vknabel/.rvm/bin
 
 Yarn version: 
-  0.23.3
+  0.23.4
 
 Node version: 
   6.10.2
@@ -17,9 +17,9 @@ npm manifest:
   {
     "name": "@ionic-decorator/status-bar-style",
     "description": "Allows you to declare the StatusBar style of your Ionic Page",
-    "version": "0.0.0",
+    "version": "0.0.3",
     "license": "MIT",
-    "main": "dist/index.js",
+    "main": "dist/",
     "homepage": "https://github.com/vknabel/status-bar-style#readme",
     "repository": {
       "type": "git",
@@ -33,16 +33,10 @@ npm manifest:
       "test": "karma start",
       "test:single": "karma start --single-run",
       "lint": "tslint src/**/*.ts --force",
-      "prepublish": "yarn lint && yarn test:single && yarn build"
+      "prepublish": "yarn lint && yarn build && yarn test:single"
     },
     "files": [
-      "index.js",
-      "index.d.ts",
-      "index.metadata.json",
-      "src/**/*.d.ts",
-      "src/**/*.html",
-      "src/**/*.js",
-      "src/**/*.metadata.json"
+      "dist"
     ],
     "devDependencies": {
       "@angular/cli": "1.0.2",
@@ -6304,16 +6298,9 @@ Lockfile:
       imurmurhash "^0.1.4"
       slide "^1.1.5"
   
-  ws@1.1.1:
+  ws@1.1.1, ws@^1.0.1:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.1.tgz#082ddb6c641e85d4bb451f03d52f06eabdb1f018"
-    dependencies:
-      options ">=0.0.5"
-      ultron "1.0.x"
-  
-  ws@^1.0.1:
-    version "1.1.4"
-    resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.4.tgz#57f40d036832e5f5055662a397c4de76ed66bf61"
     dependencies:
       options ">=0.0.5"
       ultron "1.0.x"
@@ -6422,7 +6409,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.10.tgz#6d1b696492c029cdbe808e59e87bbd9491b98aa8"
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@ionic-decorator%2fstatus-bar-style: You need a paid account to perform this action. For more info, visit: https://www.npmjs.com/private-modules
+  Error: https://registry.yarnpkg.com/@ionic-decorator%2fstatus-bar-style: "You cannot publish over the previously published version 0.0.3."
       at Request.params.callback [as _callback] (/Users/vknabel/.nvm/versions/node/v6.10.2/lib/node_modules/yarn/lib/util/request-manager.js:326:18)
       at Request.self.callback (/Users/vknabel/.nvm/versions/node/v6.10.2/lib/node_modules/yarn/node_modules/request/request.js:188:22)
       at emitTwo (events.js:106:13)
@@ -6430,6 +6417,6 @@ Trace:
       at Request.<anonymous> (/Users/vknabel/.nvm/versions/node/v6.10.2/lib/node_modules/yarn/node_modules/request/request.js:1171:10)
       at emitOne (events.js:96:13)
       at Request.emit (events.js:188:7)
-      at IncomingMessage.<anonymous> (/Users/vknabel/.nvm/versions/node/v6.10.2/lib/node_modules/yarn/node_modules/request/request.js:1091:12)
-      at IncomingMessage.g (events.js:291:16)
+      at Gunzip.<anonymous> (/Users/vknabel/.nvm/versions/node/v6.10.2/lib/node_modules/yarn/node_modules/request/request.js:1091:12)
+      at Gunzip.g (events.js:291:16)
       at emitNone (events.js:91:20)
