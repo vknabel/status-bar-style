@@ -17,16 +17,13 @@
     "test": "karma start",
     "test:single": "karma start --single-run",
     "lint": "tslint src/**/*.ts --force",
-    "prepublish": "yarn lint && yarn test:single && yarn build"
+    "prepublish": "yarn lint && yarn build && yarn test:single"
   },
   "files": [
-    "index.js",
-    "index.d.ts",
-    "index.metadata.json",
-    "src/**/*.d.ts",
-    "src/**/*.html",
-    "src/**/*.js",
-    "src/**/*.metadata.json"
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/src/**/*.d.ts",
+    "dist/src/**/*.js"
   ],
   "devDependencies": {
     "@angular/cli": "1.0.2",
