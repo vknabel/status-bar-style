@@ -1,9 +1,10 @@
 {
   "name": "@ionic-decorator/status-bar-style",
   "description": "Allows you to declare the StatusBar style of your Ionic Page",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "license": "MIT",
-  "main": "dist/",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "homepage": "https://github.com/vknabel/status-bar-style#readme",
   "repository": {
     "type": "git",
