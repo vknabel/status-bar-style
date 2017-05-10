@@ -17,7 +17,11 @@
     ],
     "forceConsistentCasingInFileNames": true,
     "strictNullChecks": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "lib": [
+      "es2016",
+      "dom"
+    ]
   },
   "include": [
     "src/**.ts",
@@ -28,9 +32,5 @@
     "src/testing",
     "dist",
     "node_modules"
-  ],
-    "lib": [
-      "es2016",
-      "dom"
-    ]
+  ]
 }
