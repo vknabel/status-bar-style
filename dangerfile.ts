@@ -1,5 +1,4 @@
 import { danger, warn, TextDiff, results } from 'danger';
-declare function schedule(promise: () => Promise<any | void>): void;
 
 checkIfWorkIsInProgress();
 checkIfPullRequestIsBig();
