@@ -46,6 +46,7 @@ async function checkIfAllTestsAreEnabled(): Promise<void> {
     .forEach(namedDiff => {
       fail(`The file \`${namedDiff.name}\` still contains disabled/focused tests (like \`xit\` or \`fdescribe\`).`);
     });
+  return Promise.resolve();
 }
 
 function isPullRequestBig(threshold: number): boolean {
