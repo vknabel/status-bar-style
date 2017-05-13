@@ -56,7 +56,7 @@ function isWorkInProgress(): boolean {
 
 function hasAttributionInDiff(diff: TextDiff): boolean {
   const contributorName = danger.github.pr.user.login;
-  return includes(diff.added, contributorName);
+  return diff != null && includes(diff.added, contributorName);
 }
 
 function pullRequestIsTrivial(): boolean {
@@ -71,7 +71,7 @@ function areAllTestsEnabledInNamedDiff(namedDiff: NamedDiff): boolean {
   return namedDiff.diff != null && includes(namedDiff.diff.added, 'xit', 'xdescribe', 'fit', 'fdescribe');
 }
 
-function diffForChangelog(): Promise<TextDiff> {
+function diffForChangelog(): Promise<TextDiff | null> {
   return danger.git.diffForFile('CHANGELOG.md');
 }
 
