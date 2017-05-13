@@ -16,6 +16,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "danger": "tsc -p tsconfig.danger.json && danger",
+    "danger:pr": "tsc -p tsconfig.danger.json && danger pr",
     "test": "karma start",
     "test:single": "karma start --single-run",
     "lint": "tslint src/**/*.ts --force",

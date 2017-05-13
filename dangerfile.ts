@@ -46,7 +46,6 @@ async function checkIfAllTestsAreEnabled(): Promise<void> {
     .forEach(namedDiff => {
       fail(`The file \`${namedDiff.name}\` still contains disabled/focused tests (like \`xit\` or \`fdescribe\`).`);
     });
-  return Promise.resolve();
 }
 
 function isPullRequestBig(threshold: number): boolean {
@@ -90,10 +89,12 @@ async function namedDiffForFile(fileName: string): Promise<NamedDiff> {
 }
 
 function modifiedTestFiles(): string[] {
+  console.log(danger.git.modified_files
+    .filter(fileName => includes(fileName, 'testing/', '.mock.ts', '.spec.ts')))
   return danger.git.modified_files
     .filter(fileName => includes(fileName, 'testing/', '.mock.ts', '.spec.ts'));
 }
 
 function includes<T>(array: { indexOf: (item: T) => number }, ...items: T[]): boolean {
-  return items.reduce((included, item) => included && array.indexOf(item) !== -1, true);
+  return items.reduce((included, item) => included || array.indexOf(item) !== -1, false);
 }
