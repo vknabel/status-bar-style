@@ -19,7 +19,7 @@ function checkIfWorkIsInProgress(): void {
   }
 }
 
-function checkIfPullRequestIsBig(threshold: number = 200): void {
+function checkIfPullRequestIsBig(threshold: number = 500): void {
   if (isPullRequestBig(threshold)) {
     warn(':exclamation: Big Pull Request');
   }

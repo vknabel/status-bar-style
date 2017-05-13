@@ -19,7 +19,7 @@
     "test": "karma start",
     "test:single": "karma start --single-run",
     "lint": "tslint src/**/*.ts --force",
-    "prepublish": "in-publish && yarn lint && yarn build && yarn test:single || true"
+    "prepublish": "in-publish && yarn lint --force && yarn build && yarn test:single || true"
   },
   "files": [
     "dist"
