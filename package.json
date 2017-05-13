@@ -13,6 +13,19 @@
   "bugs": {
     "url": "https://github.com/vknabel/status-bar-style/issues"
   },
+  "keywords":[
+    "ionic",
+    "native",
+    "typescript",
+    "decorator",
+    "cordova",
+    "statusbar",
+    "status",
+    "bar",
+    "style",
+    "declarative",
+    "app"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "danger": "tsc -p tsconfig.danger.json && danger",
