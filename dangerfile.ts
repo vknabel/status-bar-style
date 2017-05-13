@@ -35,7 +35,7 @@ function checkChangelogForChanges(): void {
 
 async function checkChangelogChangesForAttribution(): Promise<void> {
   const changelogDiff = await diffForChangelog();
-  if (hasAttributionInDiff(changelogDiff)) {
+  if (!hasAttributionInDiff(changelogDiff)) {
     warn('Please add your GitHub name to the changelog entry, so we can attribute you correctly.');
   }
 }
