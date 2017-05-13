@@ -11,7 +11,7 @@ function createMockedComponent(): any {
     };
 }
 
-describe('statusbar decorator without #ionViewWillEnter', () => {
+xdescribe('statusbar decorator without #ionViewWillEnter', () => {
     let sut: ProvidesStatusBar & ViewWillEnter & ViewWillLeave;
 
     describe('and no style', () => {
