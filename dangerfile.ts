@@ -70,7 +70,7 @@ function didTouchChangelog(): boolean {
 }
 
 function areAllTestsEnabledInNamedDiff(namedDiff: NamedDiff): boolean {
-  return namedDiff.diff != null && includes(namedDiff.diff.added, 'xit', 'xdescribe', 'fit', 'fdescribe');
+  return namedDiff.diff != null && !includes(namedDiff.diff.added, 'xit', 'xdescribe', 'fit', 'fdescribe');
 }
 
 function diffForChangelog(): Promise<TextDiff | null> {
