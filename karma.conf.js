@@ -25,7 +25,10 @@ module.exports = function (config) {
       },
       coverageOptions: {
         instrumentation: true
-      }
+      },
+      exclude: [
+        "dangerfile.ts"
+      ]
     },
 
     reporters: ["progress", "karma-typescript"],

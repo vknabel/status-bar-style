@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+dangerfile.js*
 
 # dependencies
 /node_modules

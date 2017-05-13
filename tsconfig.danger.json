@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": ".",
+    "sourceMap": false,
+    "declaration": false
+  },
+  "include": [
+    "dangerfile.ts"
+  ]
+}

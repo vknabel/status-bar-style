@@ -11,7 +11,10 @@ dependencies:
     - ~/.cache/yarn
 
 test:
+  pre:
+    - yarn danger
   override:
     - yarn test
+    - yarn lint --force
   post:
     - bash <(curl -s https://codecov.io/bash) -f coverage/*/lcovonly
