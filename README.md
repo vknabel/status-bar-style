@@ -20,6 +20,13 @@ export class YourPage {
 }
 ```
 
+## Limitations
+
+Currently `@StatusBarStyle` won't reset the status bar style when a page will leave,
+so all your pages should declare `@StatusBarStyle` if the styles differ from page to page.
+
+Additionally the status bar style should not be manipulated manually in order to avoid inconsistencies.
+
 ## Installation
 
 ```bash
