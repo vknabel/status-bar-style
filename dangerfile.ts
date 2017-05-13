@@ -89,8 +89,6 @@ async function namedDiffForFile(fileName: string): Promise<NamedDiff> {
 }
 
 function modifiedTestFiles(): string[] {
-  console.log(danger.git.modified_files
-    .filter(fileName => includes(fileName, 'testing/', '.mock.ts', '.spec.ts')))
   return danger.git.modified_files
     .filter(fileName => includes(fileName, 'testing/', '.mock.ts', '.spec.ts'));
 }
