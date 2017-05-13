@@ -11,16 +11,16 @@ function createMockedComponent(): any {
     };
 }
 
-xdescribe('statusbar decorator without #ionViewWillEnter', () => {
+describe('statusbar decorator without #ionViewWillEnter', () => {
     let sut: ProvidesStatusBar & ViewWillEnter & ViewWillLeave;
 
-    describe('and no style', () => {
+    xdescribe('and no style', () => {
         beforeEach(() => {
             const decorated = StatusBarStyle('none')(createMockedComponent());
             sut = new decorated(new StatusBarMock());
         });
 
-        it('has defined #ionViewWillEnter', () => {
+        xit('has defined #ionViewWillEnter', () => {
             expect(sut.ionViewWillEnter).toEqual(jasmine.any(Function));
         });
 
@@ -37,7 +37,7 @@ xdescribe('statusbar decorator without #ionViewWillEnter', () => {
             sut = new decorated(new StatusBarMock());
         });
 
-        it('has defined #ionViewWillEnter', () => {
+        fit('has defined #ionViewWillEnter', () => {
             expect(sut.ionViewWillEnter).toEqual(jasmine.any(Function));
         });
 

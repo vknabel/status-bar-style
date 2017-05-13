@@ -42,7 +42,7 @@ async function checkChangelogChangesForAttribution(): Promise<void> {
 
 async function checkIfAllTestsAreEnabled(): Promise<void> {
   const testDiffsWithName = await diffsForAllTests();
-  testDiffsWithName.filter(areAllTestsEnabledInNamedDiff)
+  testDiffsWithName.filter(isThisTestDisabled)
     .forEach(namedDiff => {
       fail(`The file \`${namedDiff.name}\` still contains disabled/focused tests (like \`xit\` or \`fdescribe\`).`);
     });
@@ -69,8 +69,8 @@ function didTouchChangelog(): boolean {
   return includes(danger.git.modified_files, 'CHANGELOG.md');
 }
 
-function areAllTestsEnabledInNamedDiff(namedDiff: NamedDiff): boolean {
-  return namedDiff.diff != null && !includes(namedDiff.diff.added, 'xit', 'xdescribe', 'fit', 'fdescribe');
+function isThisTestDisabled(namedDiff: NamedDiff): boolean {
+  return namedDiff.diff != null && includes(namedDiff.diff.added, 'xit', 'xdescribe', 'fit', 'fdescribe');
 }
 
 function diffForChangelog(): Promise<TextDiff | null> {
