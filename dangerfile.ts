@@ -1,12 +1,14 @@
-import { danger, warn, TextDiff, results } from 'danger';
+import { danger, warn, TextDiff, results, schedule } from 'danger';
 
-checkIfWorkIsInProgress();
-checkIfPullRequestIsBig();
-checkIfAllTestsAreEnabled();
-if (!pullRequestIsTrivial()) {
-  checkChangelogForChanges();
-  checkChangelogChangesForAttribution();
-}
+schedule(async () => {
+  checkIfWorkIsInProgress();
+  checkIfPullRequestIsBig();
+  await checkIfAllTestsAreEnabled();
+  if (!pullRequestIsTrivial()) {
+    checkChangelogForChanges();
+    await checkChangelogChangesForAttribution();
+  }
+});
 
 export interface NamedDiff {
   name: string;
@@ -54,7 +56,7 @@ function isWorkInProgress(): boolean {
   return includes(danger.github.pr.title, 'WIP');
 }
 
-function hasAttributionInDiff(diff: TextDiff): boolean {
+function hasAttributionInDiff(diff: TextDiff | null): boolean {
   const contributorName = danger.github.pr.user.login;
   return diff != null && includes(diff.added, contributorName);
 }
