@@ -12,10 +12,11 @@ export interface ProvidesStatusBar {
 }
 
 export type PreferStatusBarDecorator = <PageClass extends ClassOf<ProvidesStatusBar> & Function>(target: PageClass) => PageClass | void;
-export function StatusBarStyle(configuration: StatusBarContentStyle): PreferStatusBarDecorator {
-    return (target: Function & ProvidesStatusBar) => {
+export function StatusBarStyle(configuration: StatusBarContentStyle | (() => StatusBarContentStyle)): PreferStatusBarDecorator {
+    return <PageClass extends ClassOf<ProvidesStatusBar> & Function>(target: PageClass) => {
         patchTargetMethodWithSideEffect(target, 'ionViewWillEnter', function (): void {
-            applyConfigurationToStatusBar(configuration, this.statusBar);
+            const resolvedConf = configuration instanceof Function ? configuration.bind(target)() : configuration;
+            applyConfigurationToStatusBar(resolvedConf, this.statusBar);
         });
         return target;
     };

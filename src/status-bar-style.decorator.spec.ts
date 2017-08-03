@@ -5,6 +5,7 @@ import { ProvidesStatusBar, StatusBarStyle, StatusBarContentStyle } from './stat
 
 function createMockedComponent(): any {
     return class MockedComponent {
+        public style: StatusBarContentStyle = 'none';
         constructor(
             public readonly statusBar: StatusBar
         ) { }
