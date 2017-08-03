@@ -30,7 +30,7 @@ Additionally the status bar style should not be manipulated manually in order to
 ## Installation
 
 ```bash
-$ npm install --save @ionic-decorator/status-bar-style @ionic-native/core @ionic-native/status-bar
+$ npm install --save @molecule/status-bar-style @ionic-native/core @ionic-native/status-bar
 $ ionic plugin add --save cordova-plugin-statusbar
 ```
 
