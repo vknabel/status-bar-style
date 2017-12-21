@@ -1,4 +1,4 @@
-import { ViewWillEnter, ViewWillLeave } from './core.helper';
+import { ViewDidEnter, ViewDidLeave } from './core.helper';
 import { StatusBarMock } from './testing/status-bar.mock';
 import { StatusBar } from '@ionic-native/status-bar';
 import { ProvidesStatusBar, StatusBarStyle, StatusBarContentStyle } from './status-bar-style.decorator';
@@ -12,8 +12,8 @@ function createMockedComponent(): any {
     };
 }
 
-describe('statusbar decorator without #ionViewWillEnter', () => {
-    let sut: ProvidesStatusBar & ViewWillEnter & ViewWillLeave;
+describe('statusbar decorator without #ionViewDidEnter', () => {
+    let sut: ProvidesStatusBar & ViewDidEnter & ViewDidLeave;
 
     describe('and no style', () => {
         beforeEach(() => {
@@ -21,13 +21,13 @@ describe('statusbar decorator without #ionViewWillEnter', () => {
             sut = new decorated(new StatusBarMock());
         });
 
-        it('has defined #ionViewWillEnter', () => {
-            expect(sut.ionViewWillEnter).toEqual(jasmine.any(Function));
+        it('has defined #ionViewDidEnter', () => {
+            expect(sut.ionViewDidEnter).toEqual(jasmine.any(Function));
         });
 
-        it('#ionViewWillEnter hides statusbar', () => {
+        it('#ionViewDidEnter hides statusbar', () => {
             const spy = spyOn(sut.statusBar, 'hide');
-            sut.ionViewWillEnter();
+            sut.ionViewDidEnter();
             expect(spy).toHaveBeenCalled();
         });
     });
@@ -38,19 +38,19 @@ describe('statusbar decorator without #ionViewWillEnter', () => {
             sut = new decorated(new StatusBarMock());
         });
 
-        it('has defined #ionViewWillEnter', () => {
-            expect(sut.ionViewWillEnter).toEqual(jasmine.any(Function));
+        it('has defined #ionViewDidEnter', () => {
+            expect(sut.ionViewDidEnter).toEqual(jasmine.any(Function));
         });
 
-        it('#ionViewWillEnter shows statusbar', () => {
+        it('#ionViewDidEnter shows statusbar', () => {
             const spy = spyOn(sut.statusBar, 'show');
-            sut.ionViewWillEnter();
+            sut.ionViewDidEnter();
             expect(spy).toHaveBeenCalled();
         });
 
-        it('#ionViewWillEnter has default style', () => {
+        it('#ionViewDidEnter has default style', () => {
             const spy = spyOn(sut.statusBar, 'styleDefault');
-            sut.ionViewWillEnter();
+            sut.ionViewDidEnter();
             expect(spy).toHaveBeenCalled();
         });
     });
@@ -61,19 +61,19 @@ describe('statusbar decorator without #ionViewWillEnter', () => {
             sut = new decorated(new StatusBarMock());
         });
 
-        it('has defined #ionViewWillEnter', () => {
-            expect(sut.ionViewWillEnter).toEqual(jasmine.any(Function));
+        it('has defined #ionViewDidEnter', () => {
+            expect(sut.ionViewDidEnter).toEqual(jasmine.any(Function));
         });
 
-        it('#ionViewWillEnter shows statusbar', () => {
+        it('#ionViewDidEnter shows statusbar', () => {
             const spy = spyOn(sut.statusBar, 'show');
-            sut.ionViewWillEnter();
+            sut.ionViewDidEnter();
             expect(spy).toHaveBeenCalled();
         });
 
-        it('#ionViewWillEnter has lightContent style', () => {
+        it('#ionViewDidEnter has lightContent style', () => {
             const spy = spyOn(sut.statusBar, 'styleLightContent');
-            sut.ionViewWillEnter();
+            sut.ionViewDidEnter();
             expect(spy).toHaveBeenCalled();
         });
     });
@@ -84,19 +84,19 @@ describe('statusbar decorator without #ionViewWillEnter', () => {
             sut = new decorated(new StatusBarMock());
         });
 
-        it('has defined #ionViewWillEnter', () => {
-            expect(sut.ionViewWillEnter).toEqual(jasmine.any(Function));
+        it('has defined #ionViewDidEnter', () => {
+            expect(sut.ionViewDidEnter).toEqual(jasmine.any(Function));
         });
 
-        it('#ionViewWillEnter shows statusbar', () => {
+        it('#ionViewDidEnter shows statusbar', () => {
             const spy = spyOn(sut.statusBar, 'show');
-            sut.ionViewWillEnter();
+            sut.ionViewDidEnter();
             expect(spy).toHaveBeenCalled();
         });
 
-        it('#ionViewWillEnter has blackTranslucent style', () => {
+        it('#ionViewDidEnter has blackTranslucent style', () => {
             const spy = spyOn(sut.statusBar, 'styleBlackTranslucent');
-            sut.ionViewWillEnter();
+            sut.ionViewDidEnter();
             expect(spy).toHaveBeenCalled();
         });
     });
@@ -107,19 +107,19 @@ describe('statusbar decorator without #ionViewWillEnter', () => {
             sut = new decorated(new StatusBarMock());
         });
 
-        it('has defined #ionViewWillEnter', () => {
-            expect(sut.ionViewWillEnter).toEqual(jasmine.any(Function));
+        it('has defined #ionViewDidEnter', () => {
+            expect(sut.ionViewDidEnter).toEqual(jasmine.any(Function));
         });
 
-        it('#ionViewWillEnter shows statusbar', () => {
+        it('#ionViewDidEnter shows statusbar', () => {
             const spy = spyOn(sut.statusBar, 'show');
-            sut.ionViewWillEnter();
+            sut.ionViewDidEnter();
             expect(spy).toHaveBeenCalled();
         });
 
-        it('#ionViewWillEnter has blackOpaque style', () => {
+        it('#ionViewDidEnter has blackOpaque style', () => {
             const spy = spyOn(sut.statusBar, 'styleBlackOpaque');
-            sut.ionViewWillEnter();
+            sut.ionViewDidEnter();
             expect(spy).toHaveBeenCalled();
         });
     });
