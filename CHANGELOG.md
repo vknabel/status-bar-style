@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+
+- **[feature]** `applyConfigurationToStatusBar` is now exported
+
 ## 0.1.0
 
 - **[fix]** Replace will leave with did leave #5

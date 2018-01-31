@@ -31,7 +31,7 @@ function patchTargetMethodWithSideEffect<T>(target: ClassOf<T>, methodName: stri
     };
 }
 
-function applyConfigurationToStatusBar(style: StatusBarContentStyle, statusBar: NativeStatusBar): void {
+export function applyConfigurationToStatusBar(style: StatusBarContentStyle, statusBar: NativeStatusBar): void {
     switch (style) {
         case 'none':
             statusBar.hide();
