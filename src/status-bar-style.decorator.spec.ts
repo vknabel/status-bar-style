@@ -1,6 +1,6 @@
 import { ViewDidEnter, ViewDidLeave } from './core.helper';
 import { StatusBarMock } from './testing/status-bar.mock';
-import { StatusBar } from '@ionic-native/status-bar';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ProvidesStatusBar, StatusBarStyle, StatusBarContentStyle } from './status-bar-style.decorator';
 
 function createMockedComponent(): any {

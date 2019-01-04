@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { StatusBar } from '@ionic-native/status-bar';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Injectable()
 export class StatusBarMock implements StatusBar {

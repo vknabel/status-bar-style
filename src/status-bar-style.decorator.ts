@@ -1,4 +1,4 @@
-import { StatusBar as NativeStatusBar } from '@ionic-native/status-bar';
+import { StatusBar as NativeStatusBar } from '@ionic-native/status-bar/ngx';
 import { ClassOf } from './core.helper';
 
 export type StatusBarContentStyle = 'none'

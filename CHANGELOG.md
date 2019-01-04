@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+- **[upgrade]** Requires ´@ionic-native/status-bar@^5.0.0-beta.22´
+
 ## 0.2.0
 
 - **[feature]** `applyConfigurationToStatusBar` is now exported
